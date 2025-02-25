@@ -8,11 +8,18 @@
 
 # Import required libraries
 import dash_bootstrap_components as dbc
-from dash import dcc
+from dash import dcc, html
 
 # Define the Navbar
 navbar = dbc.NavbarSimple(
-    brand="Filtera",
+    brand=dbc.Row(
+        [
+            html.Img(src="/assets/logo.png", height="40px", style={"width": "40px", "object-fit": "contain"}),
+            html.Span("Filtera", className="ms-2 text-white fs-4")
+         ],
+        align="left",
+        className="g-0",
+    ),
     brand_href="/",
     color="#4D4D4F",
     dark=True,
