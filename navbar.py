@@ -34,6 +34,5 @@ navbar = dbc.NavbarSimple(
             ]
         ),
     ],
-    # fluid=True, # Make the Navbar fluid
     style={"height": "30%", "width": "100%", 'margin': "0px", 'padding': "0px"}
 )

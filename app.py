@@ -10,6 +10,7 @@
 import dash
 import dash_bootstrap_components as dbc
 from navbar import navbar
+from dash import html
 
 # Add Bootstrap and FontAwesome
 external_stylesheets = [

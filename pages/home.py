@@ -14,7 +14,9 @@ from dash import html
 dash.register_page(__name__, path="/")
 
 # Define the page layout
-layout = html.Div([
+layout = html.Div(
+    [
     html.H1("About Filtera"),
     html.P("Welcome to the home page of our Dash app!")
-])
+    ]
+)
