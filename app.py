@@ -14,7 +14,8 @@ from navbar import navbar
 # Add Bootstrap and FontAwesome
 external_stylesheets = [
     dbc.themes.BOOTSTRAP,
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",
+    "/assets/styles.css"
 ]
 
 # Initialize the Dash app
