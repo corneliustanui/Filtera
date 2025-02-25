@@ -14,3 +14,13 @@ import datetime
 
 # Register the page
 dash.register_page(__name__, path="/fantasy")
+
+
+layout = html.Div([
+    dbc.Row([
+        dbc.Col([
+            # bigger text
+            html.H1("Dash App Demo!"),
+
+            # smaller text
+            html.P("This is a basic Dash app to demonstrate components and deployment.")])])])
