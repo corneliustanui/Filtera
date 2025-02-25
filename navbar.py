@@ -17,12 +17,14 @@ navbar = dbc.NavbarSimple(
     color="#4D4D4F",
     dark=True,
     children=[
-        dbc.NavItem(dcc.Link("Home", href="/", className="nav-link")),
-        dbc.NavItem(dcc.Link("About", href="/about", className="nav-link text-lowercase fw-light fs-5 text-white")),
-        dbc.NavItem(dcc.Link("Fantasy", href="/fantasy", className="nav-link text-titlecase fw-bold fs-5 text-white")),
+        dbc.NavItem(dcc.Link("About", href="/", className="nav-link text-titlecase fw-light fs-5 text-white")),
+        dbc.NavItem(dcc.Link("Film", href="/film", className="nav-link text-titlecase fw-light fs-5 text-white")),
+        dbc.NavItem(dcc.Link("Literature", href="/literature", className="nav-link text-titlecase fw-light fs-5 text-white")),
 
         # The main dropdown link text
         dbc.DropdownMenu(
+            className="nav-link text-titlecase fw-light fs-5 text-white",
+            style={'margin': "0px", 'padding': "0px"},
             label="Contact",
             nav=True,
             in_navbar=True,
@@ -32,5 +34,6 @@ navbar = dbc.NavbarSimple(
             ]
         ),
     ],
+    # fluid=True, # Make the Navbar fluid
     style={"height": "30%", "width": "100%", 'margin': "0px", 'padding': "0px"}
 )
