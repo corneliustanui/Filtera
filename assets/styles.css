@@ -42,3 +42,19 @@
 .custom-input1:invalid:focus {
     border: 1px solid red !important;
 }
+
+
+/*
+div {
+    border: 1px solid red;
+}
+
+
+.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+}
+
+*/
