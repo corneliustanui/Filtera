@@ -13,7 +13,7 @@ import dash_bootstrap_components as dbc  # Import Dash Bootstrap Components
 import datetime
 
 # Register the page
-dash.register_page(__name__, path="/fantasy")
+dash.register_page(__name__, path="/film")
 
 
 layout = html.Div([
