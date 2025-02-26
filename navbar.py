@@ -37,8 +37,15 @@ navbar = dbc.NavbarSimple(
             nav=True,
             in_navbar=True,
             children=[
-                dbc.DropdownMenuItem("GitHub", href="https://github.com/corneliustanui", external_link=True),
-                dbc.DropdownMenuItem("LinkedIn", href="https://ke.linkedin.com/in/cornelius-tanui-527979b9", external_link=True)
+                dbc.DropdownMenuItem("GitHub", 
+                                     href="https://github.com/corneliustanui", 
+                                     external_link=True,
+                                     target="_blank"), # Open in a new tab
+
+                dbc.DropdownMenuItem("LinkedIn", 
+                                     href="https://ke.linkedin.com/in/cornelius-tanui-527979b9", 
+                                     external_link=True,
+                                     target="_blank"), # Open in a new tab
             ]
         ),
     ],
