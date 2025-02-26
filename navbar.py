@@ -14,14 +14,15 @@ from dash import dcc, html
 navbar = dbc.NavbarSimple(
     brand=dbc.Row(
         [
-            html.Img(src="/assets/logo.png", height="40px", style={"width": "40px", "object-fit": "contain"}),
-            html.Span("Filtera", className="ms-2 text-white fs-4")
-         ],
-        align="left",
+            dbc.Col(html.Img(src="/assets/logo.png", height="40px", style={"width": "40px", "object-fit": "contain"}), width="auto"),
+            dbc.Col(html.Span("Filtera", className="ms-2 text-white fs-4"), width="auto")
+        ],
+        align="center",
         className="g-0",
+        style={"margin-left": "0px"}  # Adjust the left margin as needed
     ),
     brand_href="/",
-    color="#4D4D4F",
+    color="rgb(34, 34, 34)",
     dark=True,
     children=[
         dbc.NavItem(dcc.Link("About", href="/", className="nav-link text-titlecase fw-light fs-5 text-white")),
