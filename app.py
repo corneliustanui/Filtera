@@ -33,13 +33,13 @@ app.layout = dbc.Container([
     html.Footer(
         "© 2025 Cornelius Tanui. All rights reserved.",
         style={
-            "position": "fixed",
-            "left": "0",
+            "position": "fixed", # Ensure the footer is always at the bottom of the page
+            "left": "0", 
             "bottom": "0",
             "width": "100%",
             "text-align": "center",
             "padding": "10px",
-            "border-top": "1px solid rgba(34, 34, 34, 0.1)",
+            "border-top": "1px solid rgba(34, 34, 34, 0.1)", # Add a faint border at the top
             "background-color": "white"  # Ensure the footer has a background color
         }
     )

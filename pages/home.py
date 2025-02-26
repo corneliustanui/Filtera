@@ -24,6 +24,7 @@ layout = html.Div(
         html.P("Happy exploring! 🎬📚")
     ],
 
+    # Styling the content region
     style={
                 "border": "1px solid rgb(34, 34, 34)",  # Black border with 1px width
                 "padding": "20px",  # Padding inside the box

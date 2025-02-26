@@ -25,7 +25,7 @@ navbar = dbc.NavbarSimple(
     color="rgb(34, 34, 34)",
     dark=True,
     children=[
-        dbc.NavItem(dcc.Link("About", href="/", className="nav-link text-titlecase fw-light fs-5 text-white")),
+        dbc.NavItem(dcc.Link("Home", href="/", className="nav-link text-titlecase fw-light fs-5 text-white")),
         dbc.NavItem(dcc.Link("Film", href="/film", className="nav-link text-titlecase fw-light fs-5 text-white")),
         dbc.NavItem(dcc.Link("Literature", href="/literature", className="nav-link text-titlecase fw-light fs-5 text-white")),
 

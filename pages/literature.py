@@ -15,12 +15,22 @@ import datetime
 # Register the page
 dash.register_page(__name__, path="/literature")
 
-
+# Define the page layout and content
 layout = html.Div([
     dbc.Row([
         dbc.Col([
-            # bigger text
-            html.H1("Dash App Demo!"),
 
-            # smaller text
-            html.P("This is a basic Dash app to demonstrate components and deployment.")])])])
+            # content
+            html.P("Interactively explore literature data using tables and visualizations."),
+        ])
+    ])
+],
+
+# Styling the content region
+style={
+        "border": "1px solid rgb(34, 34, 34)",  # Black border with 1px width
+        "padding": "20px",  # Padding inside the box
+        "border-radius": "0px",  # Unrounded corners
+        "box-shadow": "2px 2px 10px rgba(0, 0, 0, 0.1)"  # A shadow for better visual effect
+    }
+)
