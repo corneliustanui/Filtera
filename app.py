@@ -28,6 +28,22 @@ app = dash.Dash(__name__, use_pages=True,
 app.layout = dbc.Container([
     navbar,  # Navigation bar
     dbc.Row([dbc.Col(dash.page_container, width=12)]),  # Loads the correct page
+
+    # Footer
+    html.Footer(
+        "© 2025 Cornelius Tanui. All rights reserved.",
+        style={
+            "position": "fixed",
+            "left": "0",
+            "bottom": "0",
+            "width": "100%",
+            "text-align": "center",
+            "padding": "10px",
+            "border-top": "1px solid rgba(34, 34, 34, 0.1)",
+            "background-color": "white"  # Ensure the footer has a background color
+        }
+    )
+
 ], fluid=True)
 
 # Expose the server for deployment
