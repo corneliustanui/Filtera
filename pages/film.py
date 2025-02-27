@@ -18,11 +18,26 @@ dash.register_page(__name__, path="/film")
 # Define the page layout and content
 layout = html.Div([
     dbc.Row([
+        # Sidebar
         dbc.Col([
+            html.H4("Genres"),
+            dbc.ButtonGroup(
+                [
+                    dbc.Button("Action", color="primary", href="/action", active=True),  # Make this button active by default
+                    dbc.Button("Fantasy", color="primary", href="/fantasy"),
+                    dbc.Button("Drama", color="primary", href="/drama"),
+                    dbc.Button("Sci-Fi", color="primary", href="/sci-fi"),
+                ],
+                vertical=True,
+                className="me-2"
+            ),
+        ], width=2, style={"border-right": "1px solid rgb(34, 34, 34)", "padding": "20px"}),
 
-            # content
+        # Main content
+        dbc.Col([
             html.P("Interactively explore film data using tables and visualizations."),
-        ])
+            html.Div(id="content-area")  # This is where the content will be displayed
+        ], width=10)
     ])
 ],
 
