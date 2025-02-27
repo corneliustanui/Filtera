@@ -11,6 +11,7 @@ import dash
 from dash import html, dcc, Input, Output
 import dash_bootstrap_components as dbc  # Import Dash Bootstrap Components
 import datetime
+from pages.action import layout as action_layout
 
 # Register the page
 dash.register_page(__name__, path="/film")
@@ -23,10 +24,10 @@ layout = html.Div([
             html.H4("Genres"),
             dbc.ButtonGroup(
                 [
-                    dbc.Button("Action", color="primary", href="/action", active=True),  # Make this button active by default
-                    dbc.Button("Fantasy", color="primary", href="/fantasy"),
-                    dbc.Button("Drama", color="primary", href="/drama"),
-                    dbc.Button("Sci-Fi", color="primary", href="/sci-fi"),
+                    dbc.Button("Action", color="primary", id="btn-action", n_clicks=0),  # Remove href and use id
+                    dbc.Button("Fantasy", color="primary", id="btn-fantasy", n_clicks=0),
+                    dbc.Button("Drama", color="primary", id="btn-drama", n_clicks=0),
+                    dbc.Button("Sci-Fi", color="primary", id="btn-sci-fi", n_clicks=0),
                 ],
                 vertical=True,
                 className="me-2"
@@ -35,8 +36,7 @@ layout = html.Div([
 
         # Main content
         dbc.Col([
-            html.P("Interactively explore film data using tables and visualizations."),
-            html.Div(id="content-area")  # This is where the content will be displayed
+            html.Div(id="content-area")  # Placeholder for dynamic content
         ], width=10)
     ])
 ],
@@ -49,3 +49,30 @@ style={
         "box-shadow": "2px 2px 10px rgba(0, 0, 0, 0.1)"  # A shadow for better visual effect
     }
 )
+
+# Define the callback to update the content based on the button clicked
+@dash.callback(
+    Output("content-area", "children"),
+    [Input("btn-action", "n_clicks"),
+     Input("btn-fantasy", "n_clicks"),
+     Input("btn-drama", "n_clicks"),
+     Input("btn-sci-fi", "n_clicks")]
+)
+def update_content(btn_action, btn_fantasy, btn_drama, btn_sci_fi):
+    ctx = dash.callback_context
+
+    if not ctx.triggered:
+        button_id = "btn-action"  # Default to Action content
+    else:
+        button_id = ctx.triggered[0]["prop_id"].split(".")[0]
+
+    if button_id == "btn-action":
+        return action_layout
+    elif button_id == "btn-fantasy":
+        return html.P("Content for Fantasy genre.")
+    elif button_id == "btn-drama":
+        return html.P("Content for Drama genre.")
+    elif button_id == "btn-sci-fi":
+        return html.P("Content for Sci-Fi genre.")
+    else:
+        return html.P("Select a genre to see the content.")
