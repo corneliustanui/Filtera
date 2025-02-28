@@ -12,6 +12,9 @@ from dash import html, dcc, Input, Output
 import dash_bootstrap_components as dbc  # Import Dash Bootstrap Components
 import datetime
 from pages.action import layout as action_layout
+from pages.fantasy import layout as fantasy_layout
+from pages.drama import layout as drama_layout
+from pages.scifi import layout as sci_fi_layout
 
 # Register the page
 dash.register_page(__name__, path="/film")
@@ -69,10 +72,10 @@ def update_content(btn_action, btn_fantasy, btn_drama, btn_sci_fi):
     if button_id == "btn-action":
         return action_layout
     elif button_id == "btn-fantasy":
-        return html.P("Content for Fantasy genre.")
+        return fantasy_layout
     elif button_id == "btn-drama":
-        return html.P("Content for Drama genre.")
+        return drama_layout
     elif button_id == "btn-sci-fi":
-        return html.P("Content for Sci-Fi genre.")
+        return sci_fi_layout
     else:
         return html.P("Select a genre to see the content.")
