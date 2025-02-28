@@ -27,20 +27,20 @@ layout = html.Div([
             html.H4("Genres"),
             dbc.ButtonGroup(
                 [
-                    dbc.Button("Action", color="primary", id="btn-action", n_clicks=0),  # Remove href and use id
-                    dbc.Button("Fantasy", color="primary", id="btn-fantasy", n_clicks=0),
-                    dbc.Button("Drama", color="primary", id="btn-drama", n_clicks=0),
-                    dbc.Button("Sci-Fi", color="primary", id="btn-sci-fi", n_clicks=0),
+                    dbc.Button("Action", color="dark", id="btn-action", n_clicks=0), 
+                    dbc.Button("Fantasy", color="dark", id="btn-fantasy", n_clicks=0),
+                    dbc.Button("Drama", color="dark", id="btn-drama", n_clicks=0),
+                    dbc.Button("Sci-Fi", color="dark", id="btn-sci-fi", n_clicks=0),
                 ],
                 vertical=True,
-                className="me-2"
-            ),
-        ], width=2, style={"border-right": "1px solid rgb(34, 34, 34)", "padding": "20px"}),
+                className="me-2",
+            )
+        ], width=1, style={"border-right": "1px solid rgb(34, 34, 34)", "padding-left": "7px"}),
 
         # Main content
         dbc.Col([
             html.Div(id="content-area")  # Placeholder for dynamic content
-        ], width=10)
+        ], width=11)
     ])
 ],
 
@@ -49,7 +49,7 @@ style={
         "border": "1px solid rgb(34, 34, 34)",  # Black border with 1px width
         "padding": "20px",  # Padding inside the box
         "border-radius": "0px",  # Unrounded corners
-        "box-shadow": "2px 2px 10px rgba(0, 0, 0, 0.1)"  # A shadow for better visual effect
+        "box-shadow": "2px 2px 10px rgba(0, 0, 0, 0.1)", # A shadow for better visual effect,
     }
 )
 
